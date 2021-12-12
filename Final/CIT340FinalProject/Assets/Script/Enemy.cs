@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShoot : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     int laserLayer;
-    
+
     public GameObject LaserPrefab;
-    
-    public float delayFire = 0.25f;
+
+    public float delayFire = 0.45f;
     float coolTimer = 0;
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class PlayerShoot : MonoBehaviour
     {
         coolTimer -= Time.deltaTime;
 
-        if (Input.GetButton("Fire1") && coolTimer <= 0)
+        if (coolTimer <= 0)
         {
             coolTimer = delayFire;
 
